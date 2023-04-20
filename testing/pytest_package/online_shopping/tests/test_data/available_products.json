@@ -1,0 +1,30 @@
+[
+  {
+    "name": "The lord of the rings",
+    "price": 10.80,
+    "product_type": "book",
+    "number_of_copies": 3,
+    "product_id": "ABC"
+  },
+  {
+    "name": "Harry Potter",
+    "price": 15.80,
+    "product_type": "book",
+    "number_of_copies": 1,
+    "product_id": "ABD"
+  },
+  {
+    "name": "Call of duty",
+    "price": 65.80,
+    "product_type": "Video Game",
+    "number_of_copies": 10,
+    "product_id": "XYZ"
+  },
+  {
+    "name": "Razer Blade 15 Advance",
+    "price": 2300.80,
+    "product_type": "Electronic",
+    "number_of_copies": 2,
+    "product_id": "YUZ"
+  }
+]

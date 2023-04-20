@@ -1,0 +1,17 @@
+1 - Test function/methods should only contain the necessary code to test
+the specific requirement of functionality that wants to be tested, any database
+set up, network connections... Should be set outside the function or test.
+
+2 - The order in which the test are run should not matter.
+
+3 - If you make modifications to your code and tests that are in theory not
+related to those modifications that you made start breaking, that is sign that
+there are code smells on your code, DO NOT modify the tests so they pass (that is cheating),
+go back and modify the code so all the tests pass.
+
+4 - Any components that are outside of your scope but are necessary for tests like
+databases, external APIs, socket connections... They need to be mocked so unit tests
+do not depend on those components. This is only related to Unit testing, Integration
+testing or end to end testing is different story.
+
+

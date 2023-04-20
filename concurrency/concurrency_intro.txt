@@ -1,0 +1,78 @@
+First we must distinguish between concurrency and parallelism.
+
+Concurrency is about dealing with lots of things at once.
+
+Parallelism is about doing lots of things at once.
+
+Concurrency is about structure, parallelism is about execution.
+
+Definitions:
+
+- Concurrency:
+The ability to handle multiple pending tasks making progress one at the time.
+A single CPU is concurrency, it handles multiple tasks at the same jumping
+from one to another.
+
+- Parallelism: the ability to execute multiple computations at the same time.
+this requires multiple CPUs.
+
+- Execution unit: A Container that executes code concurrently, each execution
+unit has its independent state and call back.
+
+- Process: An instance of a computer program while it is running, using memory and
+a slice fo the cpu time. Each process is isolated with its own memory space,
+processes communicate with each other via pipes or sockets.
+
+
+- Thread: When a process starts, it sues a single thread, the main thread.
+A process can create more threads to operate.  Multiple threads on the same
+process share the same memory.
+
+- Coroutine: A function that can suspend itself and come back when it desires
+and is allowed.
+
+
+Lets discuss some facts about processes, interpreter, threads and the GIL.
+Instead of repeat myself, for a better understanding of the GIL and what it
+actually does you should read the following article (https://realpython.com/python-gil/),
+by the way the website realpython.com is probably the best online python resource.
+
+1 - Code in python is dynamically interpreted by the interpreter.
+
+2 - You can use multiple python interpreters at the same time.
+
+3 - each python interpreter is a process, so by having multiple processes
+you can have multiple interpreters running at the same time.
+
+4 - the python interpreter uses a single thread to run the user program and
+the memory garbage collector.
+
+5 - Access to internal interpreter state or objects reference count is controlled
+by the GIL. an interpreter can have multiple threads but the GIL can only be
+hold by one thread at the time, remember this because is the main reason why Threads
+Do not give you any benefit for computational activities.
+
+6 - To prevent a single python thread from holding the GIL forever, python
+interpreter pauses the current thread every 5 ms, Releasing the GIL and allowing
+it to be graved by other thread. If no other thread is the demanding the GIL
+then the thread that was holding the GIL will re-take it.
+
+7 - Python code has no control over the GIL, built-in functions or C extions
+have control the GIL.
+
+8 - There are some specific python functions that release the GIL when used,
+for example I/O requests or zlib.
+
+9 - What about other python interpreters that are not the Cpython? do they
+have the GIL limitation? Jython (an interpreter written in Java) does NOT
+have the GIL, BUT they are still interpreting python 2.7, so that is a no no.
+PyPy has the GIL on 2.7 and 3.7
+
+
+
+
+
+
+
+
+

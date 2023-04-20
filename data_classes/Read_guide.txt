@@ -1,0 +1,14 @@
+To take most advantage this quick data class guide by reading in this order.
+
+1 - Intro.py: Brief discussion of what problems Data class wants to solve
+and 3 different ways of creating data class.
+2 - Classic_named_tuples.py: namedtuple is more than just immutable data holders,
+it gives us access to attributes/methods like '_fields' or '_asdict()'
+3 - type_hints.py: A quick intro to type hints and how type hints is more than
+just visual help when we are coding, it allows us to inspect the python objects
+on our code by using methods like __annotations__ or __doc__
+4 - dataclass_parameters.py: initalization parameters that you can give to
+dataclass decorator to customize the dataclass.
+5 - post_init.py: explanation of method __post_init__.py which provides us
+with extra functionality on initializing data class.
+6- dataclass_best_practices.py: when to use data class, errors to avoid.

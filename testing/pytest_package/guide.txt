@@ -1,0 +1,61 @@
+In order to get the best out of this guide follow this order:
+
+For general advice on testing and simple rules look at .
+organizing_tests.txt
+golden_rules_of_tests.txt
+
+1 - running_flags.txt is a summary of the flags that pytest command takes, is
+for reference.
+2 - test_basics.py: an introduction to pytest and testing in general.
+3 - fixtures.py: one of the most important concepts of pytest, fixtures.
+4 - conftest.py: a special file on pytest that is connected with fixtures.
+5 - builtin_fixtures.py: Pytest give you a lof of already built fixtures
+that are ready to be used, this file introduces some of the most important ones.
+6 - parametrization.py: pytest parametrization helps you test the same functionality
+under multiple scenarios, very useful to avoid code repetition.
+7 - markers.py: pytest markers are tags with meaning and/or functionality.
+8 - mocking.py: Unit testing should be run on isolation but at the same time
+your applications do not work on isolation and depend on APIs, cloud components ..
+To overcome this problem we normally fake/mock components on our test.
+9 - assert_errors_raised.py: the importance of asserting errors are raised
+
+
+In order to see a simple example on unit testing of an application with pytest
+look at the 'online_shopping' application, is just a simple online shopping
+application where we have a 'User' that buys 'Product' and puts them in a 'Cart'.
+this quick application was designed with unittesting and you can see them.
+
+I recommend that you read the implementation and the test together, for example
+class User is under module user.py, open that file and also open the test file
+test_user.py, then you can see test examples that might give you guidance.
+
+
+#####coverage
+to run pytest with coverage you need to install 2 extra packages
+coverage
+pytest-cov
+
+to run test with coverage you can do it by adding --cov flag to pytest command
+and add path to the code that is testing --cov=path_to_code__to_measure_coverage
+
+pytest --cov=path_to_code_to_test_with_coverage
+
+you can also run coverage with command
+
+coverage run --source=source_code_to_measure -m pytest
+
+then to see the report run the command below.
+coverage report
+
+
+you can also set coverage configurations on coverage config file .coveragerc
+
+to get a coverage report on html you call the command below
+
+pytest --cov=path_to_test --cov-report=html
+
+or
+coverage html
+
+
+

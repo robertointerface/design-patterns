@@ -1,0 +1,23 @@
+
+-where should I write the tests?
+tests are normally under a python package called 'tests' like in our little
+online_shopping project.
+
+
+- where should I write test fixtures or hooks?
+It depends, fixtures and hooks that are used by multiple tests should go under
+the file conftest.py which is sort of a local plugin for our tests, note
+that there can only be on conftest.py under one 'tests' package.
+If fixtures are only used on a specific testing file then they can just be under
+that testing file.
+
+
+- How can I run the tests?
+if you are doing it with the command line, use the command 'pytest'. and
+follow the examples below:
+single method (inside class):   pytest path/to_test_module.py::TestClass::test_method
+single function test:   pytest path/to_test_module.py::test_function
+all test in a class:     pytest path/to_test_module.py::TestClass
+all tests in a module:  pytest path/to_test_module.py
+all test in a directory: pytest path_to_directory
+test matching a name patter: pytest -k pattern (you can build very complex patterns with logic terms as 'and' 'or' 'not')

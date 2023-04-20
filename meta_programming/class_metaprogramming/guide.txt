@@ -1,0 +1,4 @@
+Class metaprogramming is about creating or customizing classes at run time.
+
+Classes are first class objects in python, so a function can be used to create
+a new class at any time, without using the class keyword.

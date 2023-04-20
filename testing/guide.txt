@@ -1,0 +1,104 @@
+This testing guide is focused on 2 topics.
+
+1 - Show the full potential of packages unittest and pytest.
+2 - Show best practices when it comes to testing.
+
+Is important to understand from the beginning that testing can provide us with
+more functionality than just testing if our functionality is working as intended.
+
+Testing can give us hints on whether our code is well designed (highlights code smell)
+and can also help us write code that is easy to maintain through TDD or hybrid
+TDD.
+
+First is to describe, what is testing?
+
+Software testing is the process of evaluating and verifying that a software
+product or application does what it is supposed to do.
+
+We can normally identify 4 types of testing.
+
+1- Unit testing: Tests that checks small peaces of code, like a function, class
+method.
+
+2 - Integration Test: tests that check entire classes, multiple functions working
+together or part of a package, thing about integration test as tests with a bigger
+scope than unit testing but smaller than entire system testing.
+
+3 - System test (also called 'end-to-end'): tests that checks the entire system
+under an environment as close as possible to end-user environment, i.e if
+your application is supposed to run on ubuntu server then you should try to
+replicate ubuntu server environment.
+
+4 - Functional tests: functional tests
+
+
+unittest VS pytest.
+I have used both extensively, if I have to choose one I would go for pytest BUT
+provided you add pytest-mock package or use unittest.mock modules since unittest
+is a package that comes by default with python.
+Here are some pros and cons on both packages.
+
+Unittest.
+    - Pros:
+        - no installation required, comes as default on python.
+        - Well maintained and used in the community, lots of help from the
+        community.
+        - Well define 'assert' methods, you have methods to assertDictEqual,
+        assertCountEqual... this makes is super readable and easy to understand
+        what is being asserted.
+        - Great mocking functionality.
+    - Cons:
+        - Ugly CLI interface and feedback.
+        - sort of difficult CLI.
+
+Pytest:
+    - Pros:
+        - fixtures make it super efficient, readable the initialise test parameters
+        part.
+        - Readable/friendly feedback from CLI.
+        - well maintained and used in the community, lots of help.
+        - Other features like mark, parametrize... make the testing experience
+        less repetitive and very optimize.
+    - Cons:
+        - You don't have multiple assert* methods like unittest and is difficult
+        to understand what is being asserted sometimes.
+        -  Ugly and useless mocking library included, this is solved with the
+        use of pytest-mock package which is basically a wrapper on unittest
+        mocking.
+
+Because the mocking problem on pytest is solved thanks to pytest-mock I use
+pytest as a default and in my opinion the tests will be more organize and will
+be easier to run on pytest.
+
+
+***************************TDD**********************************************
+
+Do I encourage TDD as a methodology? Like a very smart half chinese/half french
+philosopher once said 'Yes and no'.
+
+Yes, because the process will help you on building code that is isolated, high
+cohesion, low coupling, well tested... in general it will help you on creating
+state of the art code.
+
+No, because is very time consuming, is easy to over test components that
+don't really need so much testing and specially because is very very difficult
+to be consistant on the methodology, the process of first create the test and
+then create the unit tends to be very boring and is hard to maintain in the
+long run.
+
+That is why I personally do hybrid TDD (even that I love TDD), hybrid TDD
+is basically do your Unit Testing while you are creating functionality, this
+means writing your tests right after you have writen a little function or a
+little class method, write functionality keeping in mind that right after you
+need to write a unit test for it. A good way to measure this is by counting the
+lines of code that you need to write before you do unit test for that peace
+of code. If you are writing over 50 lines of code before you test that code,
+that is a bad sign.
+
+###########################################################################
+
+PYTEST
+pytest_package contains a guide and examples on Pytest module, is basically a
+summary of a book called 'Python testing with pytest' (version 2) with a small
+application (e-commerce) with some testing on it highlighting the main ideas
+of testing. look under pytest_package.

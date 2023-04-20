@@ -1,0 +1,53 @@
+--setup-show
+shows clearly what fixtures are being called and in what order
+
+-k
+run test whose name match specific keywords, i.e pytest -k "Dollhouse"
+that will run tests that contain any function, class or attributes/variables
+name that contain "Dollhouse"
+
+-ra
+show extra information of the tests, by default pytest will only show information
+about the failing test, with this flag we show information about skipped tests and
+so on.
+
+--fixtures -v
+show where the fixtures are located or a summary of the fixtures, use the -v
+to show the docstrings.
+
+--fixtures-per-test
+shows what fixtures are used by each test.
+
+
+-s
+display on the terminal the print statements, without the '-s' pytest will
+only display on the terminal the failure tests explanation
+
+
+-m
+run tests that match only the provided mark, i.e pytest -m integration
+will run only the tests that have the mark @pytest.mark.integration
+
+
+-lf/ --last-failed: runs just hte tests that failed last
+
+-ff/ --failed-first: runs all the test, starting with the last failed
+
+-x/ --exitfirst: stop the test session after the first failure
+
+--maxfail=num stop the tests after x number of failure
+
+-nf/ --new-first: run all the tests, ordered by file modification time
+
+--sw stop the tests at the first failure
+
+-v/ --verbose: display all the tests names, passing or failing
+
+--tb=[auto/long/short/line/native/no] control the traceback of errors
+
+-l/ --showlocals display local variables alongside the stacktrace
+
+--pdb: starts an interactive debugging session at the point of failure
+
+--trace: starts the pdb source-code debugger when running each test
+

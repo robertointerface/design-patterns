@@ -1,0 +1,33 @@
+The word meta-programming sounds very fancy but at the very basic we can say
+that meta-programming refers to a variety of ways a program has knowledge of
+itself or can manipulate itself.
+
+for example the classical peace of code below is meta-programming, the
+program has knowledge of what type a parameter is and takes a path or not
+depending on that piece of information.
+
+if isintance('Goku fights vegeta', str):
+
+
+Before you learn how to manipulate and perform meta-programming you need to
+learn how to properly inspect python code, once you know how to properly
+inspect the code you can properly
+
+1 - First learn basics about class and instance attributes, differences between them,
+    how to access them and modify them, from dynamic_attributes/properties_and_instance_attributes.py
+2 - Read dynamic_attributes/dynamic_attributes_and_properties.py
+3 - Read an example of dynamic attributes manipulation by __getatrr__ with file
+    dynamic_attributes/frozen_json.py
+4 - Learn about how to manipulate class instance creation by defining your own
+    __new__ method on overriding__new__method.py
+5 - Computed properties: Learn the concept of computed properties from
+    dynamic_attributes/computed_properties.py.
+6 - use property for attribute validation like in dynamic_attributes/property_as_validation.py.
+7 - To overcome some property limitations we can use what is called the 'property factory'.
+    this can be seen on dynamic_attributes/property_factory.py
+
+One of the most important patterns in python is the 'attribute descriptors',
+Attribute descriptors are classes that implement the '__get__', '__set__'
+and '__delete__' methods,
+
+1 - introduction to descriptors,
